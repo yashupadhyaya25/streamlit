@@ -11,5 +11,5 @@ my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/da
 my_fruit_list = my_fruit_list.set_index('Fruit')
 st.title("Build Your Own Smoothie")
 st.text("Filter Fruits By Name")
-# st.mutiselect('',list(my_fruit_list.index))
+st.mutiselect('',list(my_fruit_list.index))
 st.dataframe(my_fruit_list)
