@@ -33,7 +33,7 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 my_data_row = my_cur.fetchall()
 fruit_load_df = pd.DataFrame(my_data_row)
-fruit_load_df.rename(col = {0: 'Fruit Name'},inplace = True)
+fruit_load_df.rename(columns = {0: 'Fruit Name'},inplace = True)
 st.header('Fruit Load Contains')
 st.dataframe(fruit_load_df)
 
