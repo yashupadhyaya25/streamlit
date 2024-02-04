@@ -39,4 +39,9 @@ st.dataframe(fruit_load_df)
 
 fruit_cus_want_to_add = st.text_input('Which Fruit you want to add ?','')
 if fruit_cus_want_to_add != '' :
+  check_already_there = "Select * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST where FRUIT_NAME = '"+fruit_cus_want_to_add.lower()+"'"
+  my_cur.execute(check_already_there)
+  check_already_there_data_row = my_cur.fetchall()
+  st.text(check_already_there_data_row)
   st.text('Thanks For Adding '+ fruit_cus_want_to_add.lower())
+  
