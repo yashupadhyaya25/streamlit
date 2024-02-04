@@ -19,6 +19,6 @@ else :
 
 fruityvice_response = rq.get("https://fruityvice.com/api/fruit/watermelon")
 st.header("Fruityvice Fruit Advice!")
-normalize_fruityvice_res_json_df = pd.json_normalize(fruityvice_response.json())
+normalize_fruityvice_res_json_df = pd.json_normalize(fruityvice_response.json()).set_index('id')
 st.dataframe(normalize_fruityvice_res_json_df)
 
