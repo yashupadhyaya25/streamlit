@@ -17,8 +17,10 @@ if len(fruit_selected) > 0 :
 else :
   st.dataframe(my_fruit_list)
 
-fruityvice_response = rq.get("https://fruityvice.com/api/fruit/watermelon")
 st.header("Fruityvice Fruit Advice!")
+fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+streamlit.write('The user entered ', fruit_choice)
+fruityvice_response = rq.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 normalize_fruityvice_res_json_df = pd.json_normalize(fruityvice_response.json()).set_index('id')
 st.dataframe(normalize_fruityvice_res_json_df)
 
