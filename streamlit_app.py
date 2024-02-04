@@ -33,9 +33,6 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 my_data_row = my_cur.fetchall()
 fruit_load_list = pd.DataFrame(my_data_row).set_index(0)
-add_fruit_to_load = st.multiselect('🍓🍉🍒🍑 Choose Fruit For Load🍓🍉🍒🍑',list(fruit_load_list.index))
-if len(add_fruit_to_load) > 0 :
-  st.write('Thanks For adding',str(add_fruit_to_load)[1:-1].replace("'",""))
-else :
-  st.text('Have you forget to add something from fruit load ?')
+add_fruit_to_load = st.multiselect('Fruit Load Contains',list(fruit_load_list.index))
+st.dataframe(fruit_load_list)
 
