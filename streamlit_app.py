@@ -37,3 +37,6 @@ fruit_load_df.rename(columns = {0: 'Fruit Name'},inplace = True)
 st.header('Fruit Load Contains')
 st.dataframe(fruit_load_df)
 
+fruit_cus_want_to_add = st.text_input('Which Fruit you want to add ?','')
+if fruit_cus_want_to_add != '' :
+  st.text('Thanks For Adding'+fruit_cus_want_to_add)
