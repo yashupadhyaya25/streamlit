@@ -34,5 +34,5 @@ my_cur.execute("SELECT * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 my_data_row = my_cur.fetchall()
 fruit_load_list = pd.DataFrame(my_data_row)
 st.header('Fruit Load Contains')
-st.dataframe(fruit_load_list)
+st.dataframe(fruit_load_list.rename(col = {0: 'Fruit Name'},inplace = True))
 
