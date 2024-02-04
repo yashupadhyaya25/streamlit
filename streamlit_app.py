@@ -18,6 +18,6 @@ else :
   st.dataframe(my_fruit_list)
 
 fruityvice_response = rq.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.header("Fruityvice Fruit Advice!")
-streamlit.header(fruityvice_response.jaon())
+st.header("Fruityvice Fruit Advice!")
+st.header(fruityvice_response.jaon())
 
