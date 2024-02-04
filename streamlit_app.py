@@ -21,7 +21,7 @@ st.header("Fruityvice Fruit Advice!")
 fruit_choice = st.text_input('What fruit would you like information about?','Kiwi')
 st.write('The user entered ', fruit_choice)
 fruityvice_response = rq.get("https://fruityvice.com/api/fruit/"+fruit_choice)
-if fruityvice_response.status_code() == 200 :
+if fruityvice_response.status_code == 200 :
   normalize_fruityvice_res_json_df = pd.json_normalize(fruityvice_response.json()).set_index('id')
   st.dataframe(normalize_fruityvice_res_json_df)
 else :
