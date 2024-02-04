@@ -19,5 +19,5 @@ else :
 
 fruityvice_response = rq.get("https://fruityvice.com/api/fruit/watermelon")
 st.header("Fruityvice Fruit Advice!")
-st.header(fruityvice_response.json())
+st.text(fruityvice_response.json())
 
