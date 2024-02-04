@@ -44,7 +44,6 @@ if fruit_cus_want_to_add != '' :
   check_already_there_data_row = my_cur.fetchall()
   if len(check_already_there_data_row) == 0 : 
     insert_query = "INSERT INTO PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+fruit_cus_want_to_add.lower()+"')"
-    st.text(insert_query)
     my_cur.execute(insert_query)
     st.text('Thanks For Adding '+ fruit_cus_want_to_add.lower()) 
     my_cnx.commit()
