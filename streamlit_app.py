@@ -36,5 +36,8 @@ fruit_load_list = pd.DataFrame(my_data_row).set_index(0)
 add_fruit_to_load = st.multiselect('🍓🍉🍒🍑 Choose Fruit For Load🍓🍉🍒🍑',list(fruit_load_list.index))
 st.text("Fruit Load List Contains")
 st.dataframe(my_data_row)
-st.write('Thanks For adding',str(add_fruit_to_load)[1:-1])
+if len(add_fruit_to_load) > 0 :
+  st.write('Thanks For adding',str(add_fruit_to_load)[1:-1])
+else :
+  st.text('Have you forget to add something from fruit load ?')
 
