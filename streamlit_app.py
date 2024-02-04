@@ -28,10 +28,10 @@ if fruityvice_response.status_code == 200 :
 else :
   st.text('Please enter the valid fruit name or try different fruit name')
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_data_row = my_cur.fetchone()
-streamlit.text("Hello from Snowflake:")
-streamlit.text(my_data_row)
+st.text("Hello from Snowflake:")
+st.text(my_data_row)
 
