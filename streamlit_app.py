@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests as rq
+import snowflake.connector as scnowflake_connector
 
 st.title("💪🥗 My Mom's Favourite Healthy Dinner 🥗💪")
 
