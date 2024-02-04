@@ -32,6 +32,7 @@ my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 my_data_row = my_cur.fetchall()
+add_fruit_to_load = st.multiselect('🍓🍉🍒🍑 Choose Fruit For Load🍓🍉🍒🍑',list(st.dataframe(my_data_row).index))
 st.text("Fruit Load List Contains")
 st.dataframe(my_data_row)
 
