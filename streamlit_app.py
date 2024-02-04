@@ -25,5 +25,5 @@ if fruityvice_response.status_code == 200 :
   normalize_fruityvice_res_json_df = pd.json_normalize(fruityvice_response.json()).set_index('id')
   st.dataframe(normalize_fruityvice_res_json_df)
 else :
-  st.text('Please enter the valid fruit name')
+  st.text('Please enter the valid fruit name or try different fruit name')
 
