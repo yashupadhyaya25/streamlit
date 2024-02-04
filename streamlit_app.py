@@ -35,4 +35,5 @@ my_data_row = my_cur.fetchall()
 add_fruit_to_load = st.multiselect('🍓🍉🍒🍑 Choose Fruit For Load🍓🍉🍒🍑',list(pd.DataFrame(my_data_row).set_index(0).index))
 st.text("Fruit Load List Contains")
 st.dataframe(my_data_row)
+st.write('Thanks For adding', list(pd.DataFrame(my_data_row).set_index(0).index).loc[add_fruit_to_load].values)
 
