@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import request as rq
 
 st.title("💪🥗 My Mom's Favourite Healthy Dinner 🥗💪")
 
@@ -15,3 +16,8 @@ if len(fruit_selected) > 0 :
   st.dataframe(my_fruit_list.loc[fruit_selected])
 else :
   st.dataframe(my_fruit_list)
+
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.header("Fruityvice Fruit Advice!")
+streamlit.header(fruityvice_response.jaon())
+
