@@ -34,5 +34,5 @@ my_cur.execute("SELECT * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 my_data_row = my_cur.fetchall()
 fruit_load_list = pd.DataFrame(my_data_row).set_index(0)
 add_fruit_to_load = st.multiselect('Fruit Load Contains',list(fruit_load_list.index))
-st.dataframe(fruit_load_list)
+st.dataframe(fruit_load_list.index)
 
