@@ -17,7 +17,7 @@ if len(fruit_selected) > 0 :
 else :
   st.dataframe(my_fruit_list)
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+fruityvice_response = rq.get("https://fruityvice.com/api/fruit/watermelon")
 streamlit.header("Fruityvice Fruit Advice!")
 streamlit.header(fruityvice_response.jaon())
 
